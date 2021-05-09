@@ -2,6 +2,15 @@ defmodule TodoAppWeb.ItemViewTest do
 	use TodoAppWeb.ConnCase, async: true
 	alias TodoAppWeb.ItemView
 
+	@items [
+		%{text: "one", status: 0},
+		%{text: "two", status: 0},
+		%{text: "three", status: 0},
+		%{text: "four", status: 1},
+	]
+	@one_item [%{text: "one", status: 0}]
+	@empty_item []
+
 	test "complete/1 returns completed if item.status === 1" do
 		assert ItemView.complete(%{status: 1}) == "completed"
 	end
