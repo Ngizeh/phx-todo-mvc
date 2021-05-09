@@ -3,8 +3,8 @@ defmodule TodoApp.Todo.Item do
   import Ecto.Changeset
 
   schema "items" do
-    field :person_id, :integer
-    field :status, :integer
+    field :person_id, :integer, default: 0
+    field :status, :integer, default: 0
     field :text, :string
 
     timestamps()
