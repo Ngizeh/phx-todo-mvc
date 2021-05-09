@@ -6,13 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="ce162057-4b5b-49ff-95fd-cbc8590f1a8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/todomvc-app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/todomvc-app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/todo_app_web/templates/item/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/todo_app_web/templates/item/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/todo_app_web/views/item_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/todo_app_web/views/item_view.ex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,7 +43,41 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Elixir Mix ExUnit.Mix ExUnit test/todo_app/views/item_view_test.exs">
+    <configuration name="Mix ExUnit test/todo_app/views/item_view_test.exs" type="MixExUnitRunConfigurationType" factoryName="Elixir Mix ExUnit" temporary="true">
+      <mix-test>
+        <argument>test/todo_app/views/item_view_test.exs</argument>
+      </mix-test>
+      <working-directory url="file://$PROJECT_DIR$" />
+      <module-filters inherit-application-module-filters="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Mix ExUnit test/todo_app/views/item_view_test.exs:13" type="MixExUnitRunConfigurationType" factoryName="Elixir Mix ExUnit" temporary="true">
+      <mix-test>
+        <argument>test/todo_app/views/item_view_test.exs:13</argument>
+      </mix-test>
+      <working-directory url="file://$PROJECT_DIR$" />
+      <module-filters inherit-application-module-filters="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Mix ExUnit test/todo_app/views/item_view_test.exs:17" type="MixExUnitRunConfigurationType" factoryName="Elixir Mix ExUnit" temporary="true">
+      <mix-test>
+        <argument>test/todo_app/views/item_view_test.exs:17</argument>
+      </mix-test>
+      <working-directory url="file://$PROJECT_DIR$" />
+      <module-filters inherit-application-module-filters="true" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Elixir Mix ExUnit.Mix ExUnit test/todo_app/views/item_view_test.exs" />
+        <item itemvalue="Elixir Mix ExUnit.Mix ExUnit test/todo_app/views/item_view_test.exs:17" />
+        <item itemvalue="Elixir Mix ExUnit.Mix ExUnit test/todo_app/views/item_view_test.exs:13" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -45,11 +87,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620553873700</updated>
-      <workItem from="1620553877332" duration="3398000" />
+      <workItem from="1620553877332" duration="7234000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
