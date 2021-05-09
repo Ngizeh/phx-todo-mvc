@@ -19,18 +19,18 @@ defmodule TodoAppWeb.ItemViewTest do
 	end
 
 	test "remaining_items/1 returns the count of items where item.status === 0" do
-		items = [
-			%{text: "one", status: 0},
-			%{text: "two", status: 0},
-			%{text: "three", status: 0},
-			%{text: "four", status: 1},
-		]
-		assert ItemView.remaining_items(items) == 3
+			assert ItemView.remaining_items(@items) == 3
 	end
 
+
 	test "remaining_items/1 returns 0 (zero) if items count is empty" do
-		items = []
-		assert ItemView.remaining_items(items) == 0
+		assert ItemView.remaining_items(@empty_item) == 0
+	end
+
+	test "pluralize/1 add an 's' on the count on items" do
+		assert ItemView.pluralize(@items) == "items"
+		assert ItemView.pluralize(@empty_item) == "items"
+		assert ItemView.pluralize(@one_item) == "item"
 	end
 end
 
