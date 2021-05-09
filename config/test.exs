@@ -7,7 +7,7 @@ use Mix.Config
 # Run `mix help test` for more information.
 config :todo_app, TodoApp.Repo,
   username: "root",
-  password: "",
+  password: "ngi1956ozeh",
   database: "todo_app_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
