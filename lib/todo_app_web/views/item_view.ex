@@ -14,4 +14,8 @@ defmodule TodoAppWeb.ItemView do
       _ -> ""
     end
   end
+
+  def remaining_items(items) do
+    Enum.filter(items, fn(item) -> item.status == 0 end)|> Enum.count()
+  end
 end

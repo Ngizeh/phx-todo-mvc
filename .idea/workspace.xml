@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ce162057-4b5b-49ff-95fd-cbc8590f1a8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/todo_app/todo/item.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/todo_app/todo/item.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/todo_app_web/controllers/item_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/todo_app_web/controllers/item_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/todo_app_web/templates/item/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/todo_app_web/templates/item/form.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/todo_app_web/templates/item/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/todo_app_web/templates/item/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/todo_app_web/controllers/item_controller_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/todo_app_web/controllers/item_controller_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/todo_app_web/views/item_view.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/todo_app_web/views/item_view.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/todo_app/views/item_view_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/todo_app/views/item_view_test.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,9 +71,18 @@
       <module-filters inherit-application-module-filters="true" />
       <method v="2" />
     </configuration>
+    <configuration name="Mix ExUnit test/todo_app/views/item_view_test.exs:21" type="MixExUnitRunConfigurationType" factoryName="Elixir Mix ExUnit" temporary="true">
+      <mix-test>
+        <argument>test/todo_app/views/item_view_test.exs:21</argument>
+      </mix-test>
+      <working-directory url="file://$PROJECT_DIR$" />
+      <module-filters inherit-application-module-filters="true" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Elixir Mix ExUnit.Mix ExUnit test/todo_app/views/item_view_test.exs" />
+        <item itemvalue="Elixir Mix ExUnit.Mix ExUnit test/todo_app/views/item_view_test.exs:21" />
         <item itemvalue="Elixir Mix ExUnit.Mix ExUnit test/todo_app/views/item_view_test.exs:17" />
         <item itemvalue="Elixir Mix ExUnit.Mix ExUnit test/todo_app/views/item_view_test.exs:13" />
       </list>
@@ -90,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620553873700</updated>
-      <workItem from="1620553877332" duration="10906000" />
+      <workItem from="1620553877332" duration="11853000" />
     </task>
     <servers />
   </component>
