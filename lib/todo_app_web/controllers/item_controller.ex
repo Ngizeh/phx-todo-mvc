@@ -26,6 +26,19 @@ defmodule TodoAppWeb.ItemController do
     end
   end
 
+  def toggle_status(item) do
+    case(item.status) do
+      1 -> 0
+      0 -> 1
+    end
+  end
+
+  def toggle(conn, %{"id" => id}) do
+    item = Todo.get_item!(id)
+    Todo.update_item(item, %{status: toggle_status(item)})
+    redirect(conn, to: Routes.item_path(conn, :index))
+  end
+
   def show(conn, %{"id" => id}) do
     item = Todo.get_item!(id)
     render(conn, "show.html", item: item)

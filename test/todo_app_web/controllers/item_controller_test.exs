@@ -3,7 +3,7 @@ defmodule TodoAppWeb.ItemControllerTest do
 
   alias TodoApp.Todo
 
-  @create_attrs %{person_id: 42, status: 42, text: "some text"}
+  @create_attrs %{person_id: 42, status: 0, text: "some text"}
   @update_attrs %{person_id: 43, status: 43, text: "some updated text"}
   @invalid_attrs %{person_id: nil, status: nil, text: nil}
 
@@ -40,6 +40,28 @@ defmodule TodoAppWeb.ItemControllerTest do
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.item_path(conn, :create), item: @invalid_attrs)
       assert html_response(conn, 200) =~ "New Item"
+    end
+  end
+
+  describe "toggle update the status of an item 0 > 1 | 1 > 0" do
+    setup [:create_item]
+
+    test "toggle_status/1 item.status 1 > 0 ", %{item: item } do
+      assert item.status == 0
+
+      toggle_item = %{item | status: TodoAppWeb.ItemController.toggle_status(item)}
+      assert toggle_item.status == 1
+
+      assert TodoAppWeb.ItemController.toggle_status(toggle_item) == 0
+    end
+
+    test "toggle/2 updates the status 0 > 1", %{conn: conn, item: item} do
+      assert item.status == 0;
+
+      get(conn, Routes.item_path(conn, :toggle, item.id))
+      toggled_item = Todo.get_item!(item.id)
+
+      assert toggled_item.status == 1
     end
   end
 

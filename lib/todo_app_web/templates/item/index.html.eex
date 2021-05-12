@@ -35,13 +35,13 @@
     <%= render "form.html", Map.put(assigns, :action, Routes.item_path(@conn, :create)) %>
   </header>
   <section class="main" style="display: block;">
-    <input id="toggle-all" class="toggle-all" type="checkbox" />
+    <input id="toggle-all" class="toggle-all" type="checkbox" /> <!-- TODO  make toggle all to work-->
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
       <%= for item <- @items do %>
         <li data-id="<%= item.id %>" class="<%= complete(item) %>">
         <div class="view">
-          <input class="toggle" type="checkbox" <%= checked(item) %> />
+          <a href="<%= Routes.item_path(@conn, :toggle, item.id) %>" class="toggle <%= checked(item) %>" ></a>
           <label><%= item.text %></label>
           <%= link "", class: "destroy", to: Routes.item_path(@conn, :delete, item), method: :delete, data: [confirm: "Are you sure?"] %>
         </div>
