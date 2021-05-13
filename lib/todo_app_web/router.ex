@@ -17,7 +17,7 @@ defmodule TodoAppWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "items", ItemController
+    resources "/items", ItemController
     get "/items/toggle/:id", ItemController, :toggle
   end
 

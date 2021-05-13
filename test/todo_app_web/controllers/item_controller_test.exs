@@ -3,8 +3,8 @@ defmodule TodoAppWeb.ItemControllerTest do
 
   alias TodoApp.Todo
 
-  @create_attrs %{person_id: 42, status: 0, text: "some text"}
-  @update_attrs %{person_id: 43, status: 43, text: "some updated text"}
+  @create_attrs %{person_id: 0, status: 0, text: "some text"}
+  @update_attrs %{person_id: 0, status: 1, text: "some updated text"}
   @invalid_attrs %{person_id: nil, status: nil, text: nil}
 
   def fixture(:item) do
@@ -15,7 +15,7 @@ defmodule TodoAppWeb.ItemControllerTest do
   describe "index" do
     test "lists all items", %{conn: conn} do
       conn = get(conn, Routes.item_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Items"
+      assert html_response(conn, 200) =~ "todo"
     end
   end
 
@@ -70,7 +70,7 @@ defmodule TodoAppWeb.ItemControllerTest do
 
     test "renders form for editing chosen item", %{conn: conn, item: item} do
       conn = get(conn, Routes.item_path(conn, :edit, item))
-      assert html_response(conn, 200) =~ "Edit Item"
+      assert html_response(conn, 200) =~ item.text
     end
   end
 
@@ -79,7 +79,7 @@ defmodule TodoAppWeb.ItemControllerTest do
 
     test "redirects when data is valid", %{conn: conn, item: item} do
       conn = put(conn, Routes.item_path(conn, :update, item), item: @update_attrs)
-      assert redirected_to(conn) == Routes.item_path(conn, :show, item)
+      assert redirected_to(conn) == Routes.item_path(conn, :index)
 
       conn = get(conn, Routes.item_path(conn, :show, item))
       assert html_response(conn, 200) =~ "some updated text"
