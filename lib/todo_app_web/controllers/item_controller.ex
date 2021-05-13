@@ -1,8 +1,10 @@
 defmodule TodoAppWeb.ItemController do
   use TodoAppWeb, :controller
+  import Ecto.Query
 
   alias TodoApp.Todo
   alias TodoApp.Todo.Item
+  alias TodoApp.Repo
 
   def index(conn, params) do
     item =
@@ -73,6 +75,13 @@ defmodule TodoAppWeb.ItemController do
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", item: item, changeset: changeset)
     end
+  end
+
+  def clear_completed(conn, _params) do
+    person_id = 0
+    query = from(item in Item, where: item.person_id == ^person_id, where: item.status == 1)
+    Repo.update_all(query, set: [status: 0])
+    index(conn, %{filter: "all"})
   end
 
   def delete(conn, %{"id" => id}) do

@@ -13,7 +13,7 @@
     <input id="toggle-all" class="toggle-all" type="checkbox" /> <!-- TODO  make toggle all to work-->
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
-      <%= for item <- @items do %>
+      <%= for item <- filter(@items, @filter) do %>
         <li data-id="<%= item.id %>" class="<%= complete(item) %>">
         <a href="<%= Routes.item_path(@conn, :toggle, item.id) %>"
            class="toggle <%= checked(item) %>">
@@ -33,6 +33,7 @@
       <% end %>
     </ul>
   </section>
+  <%= if count(@items, "all") > 0 do %>
   <footer class="footer" style="display: block;">
     <span class="todo-count"><strong><%= remaining_items(@items) %></strong> <%= pluralize(@items)  %> left</span>
     <ul class="filters">
@@ -41,18 +42,22 @@
       </li>
       <li>
         <a href="/active">Active
-          [<%= Enum.count(filter(@items, "active")) %>]
+          [<%= count(@items, "active") %>]
         </a>
       </li>
       <li>
         <a href="/completed">
           Completed
-          [ <%= Enum.count(filter(@items, "completed")) %>]
+          [ <%= count(@items, "completed") %>]
         </a>
       </li>
     </ul>
-    <button class="clear-completed" style="display: block;">
+    <%= if count(@items, "completed") > 0 do %>
+    <a class="clear-completed" href="/clear">
       Clear completed
-    </button>
+      [<%= count(@items, "completed") %>]
+    </a>
+    <% end %>
   </footer>
+  <% end %>
 </section>

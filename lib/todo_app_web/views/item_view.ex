@@ -34,6 +34,10 @@ defmodule TodoAppWeb.ItemView do
     end
   end
 
+  def count(items, str) do
+    Enum.count(filter(items, str))
+  end
+
   def pluralize(items) do
     case(remaining_items(items) == 0 || remaining_items(items) > 1) do
       true -> "items"
