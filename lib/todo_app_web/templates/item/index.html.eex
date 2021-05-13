@@ -37,13 +37,18 @@
     <span class="todo-count"><strong><%= remaining_items(@items) %></strong> <%= pluralize(@items)  %> left</span>
     <ul class="filters">
       <li>
-        <a href="#/" class="selected">All</a>
+        <a href="/items" class="selected">All</a>
       </li>
       <li>
-        <a href="#/active">Active</a>
+        <a href="/active">Active
+          [<%= Enum.count(filter(@items, "active")) %>]
+        </a>
       </li>
       <li>
-        <a href="#/completed">Completed</a>
+        <a href="/completed">
+          Completed
+          [ <%= Enum.count(filter(@items, "completed")) %>]
+        </a>
       </li>
     </ul>
     <button class="clear-completed" style="display: block;">

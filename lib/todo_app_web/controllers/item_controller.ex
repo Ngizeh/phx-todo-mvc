@@ -5,14 +5,22 @@ defmodule TodoAppWeb.ItemController do
   alias TodoApp.Todo.Item
 
   def index(conn, params) do
-    item = if not is_nil(params) and Map.has_key?(params, "id") do
-       Todo.get_item!(params["id"])
-       else
+    item =
+      if not is_nil(params) and Map.has_key?(params, "id") do
+        Todo.get_item!(params["id"])
+      else
         %Item{}
       end
+
     items = Todo.list_items()
     changeset = Todo.change_item(item)
-    render(conn, "index.html", items: items, changeset: changeset, editing: item)
+
+    render(conn, "index.html",
+      items: items,
+      changeset: changeset,
+      editing: item,
+      filter: Map.get(params, "filter", "all")
+    )
   end
 
   def new(conn, _params) do
@@ -59,7 +67,7 @@ defmodule TodoAppWeb.ItemController do
     case Todo.update_item(item, item_params) do
       {:ok, _item} ->
         conn
-#        |> put_flash(:info, "Item updated successfully.")
+        #        |> put_flash(:info, "Item updated successfully.")
         |> redirect(to: Routes.item_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -72,7 +80,7 @@ defmodule TodoAppWeb.ItemController do
     {:ok, _item} = Todo.delete_item(item)
 
     conn
-#    |> put_flash(:info, "Item deleted successfully.")
+    #    |> put_flash(:info, "Item deleted successfully.")
     |> redirect(to: Routes.item_path(conn, :index))
   end
 end

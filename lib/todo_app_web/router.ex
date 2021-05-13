@@ -19,6 +19,7 @@ defmodule TodoAppWeb.Router do
     get "/", PageController, :index
     resources "/items", ItemController
     get "/items/toggle/:id", ItemController, :toggle
+    get "/:filter", ItemController, :index
   end
 
   # Other scopes may use custom stacks.

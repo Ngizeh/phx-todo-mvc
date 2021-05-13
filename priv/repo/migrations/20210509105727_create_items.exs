@@ -9,6 +9,5 @@ defmodule TodoApp.Repo.Migrations.CreateItems do
 
       timestamps()
     end
-
   end
 end

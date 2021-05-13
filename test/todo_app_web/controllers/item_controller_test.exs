@@ -46,7 +46,7 @@ defmodule TodoAppWeb.ItemControllerTest do
   describe "toggle update the status of an item 0 > 1 | 1 > 0" do
     setup [:create_item]
 
-    test "toggle_status/1 item.status 1 > 0 ", %{item: item } do
+    test "toggle_status/1 item.status 1 > 0 ", %{item: item} do
       assert item.status == 0
 
       toggle_item = %{item | status: TodoAppWeb.ItemController.toggle_status(item)}
@@ -56,7 +56,7 @@ defmodule TodoAppWeb.ItemControllerTest do
     end
 
     test "toggle/2 updates the status 0 > 1", %{conn: conn, item: item} do
-      assert item.status == 0;
+      assert item.status == 0
 
       get(conn, Routes.item_path(conn, :toggle, item.id))
       toggled_item = Todo.get_item!(item.id)
@@ -97,6 +97,7 @@ defmodule TodoAppWeb.ItemControllerTest do
     test "deletes chosen item", %{conn: conn, item: item} do
       conn = delete(conn, Routes.item_path(conn, :delete, item))
       assert redirected_to(conn) == Routes.item_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.item_path(conn, :show, item))
       end
